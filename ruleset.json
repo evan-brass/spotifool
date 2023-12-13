@@ -1,0 +1,20 @@
+[
+	{
+		"id": 1,
+		"priority": 1,
+		"action": {
+			"type": "modifyHeaders",
+			"responseHeaders": [
+				{
+					"header": "content-security-policy",
+					"operation": "set",
+					"value": "default-src 'none'; connect-src *; media-src * blob:; img-src *; script-src 'unsafe-eval';"
+				}
+			]
+		},
+		"condition": {
+			"urlFilter": "*://open.spotify.com/*",
+			"resourceTypes": ["main_frame", "sub_frame"]
+		}
+	}
+]

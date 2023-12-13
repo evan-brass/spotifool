@@ -1,0 +1,28 @@
+{
+	"name": "Spotifool",
+	"description": "A reskin for open.spotify.com",
+	"version": "0.0.1",
+	"manifest_version": 3,
+	"permissions": [
+		"declarativeNetRequestWithHostAccess"
+	],
+	"host_permissions": [
+		"*://open.spotify.com/*"
+	],
+	"web_accessible_resources": [
+		{ "resources": ["src/*"], "matches": ["*://open.spotify.com/*"], "use_dynamic_url": true }
+	],
+	"content_scripts": [
+		{
+			"matches": ["*://open.spotify.com/*"],
+			"js": ["content.js"]
+		}
+	],
+	"declarative_net_request": {
+		"rule_resources" : [{
+			"id": "ruleset",
+			"enabled": true,
+			"path": "ruleset.json"
+		}]
+	}
+}
